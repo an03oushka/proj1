@@ -1,0 +1,72 @@
+
+.nav {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.button.login,
+.button.signup,
+.button.contact {
+  width: 70px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: #C47464;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.logo {
+  background: url("logo3.png") no-repeat;
+  width: 78px;
+  height: 78px;
+  border:none;
+}
+
+
+.website-name {
+  color: #C47464;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+/* Top bar styles */
+.top-bar {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+.button {
+  background-color: #C47464;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 16px;
+}
+.logo-and-name {
+  display: flex; /* Display the logo and title in a row */
+  align-items: center;
+}
