@@ -10,11 +10,11 @@ function App() {
       <Header />
       <FloatingImage />
       <div className="content">
-      <h2>Welcome to PennyPincherPal</h2>
+      <h1>Welcome to PennyPincherPal</h1>
         <h3><p>Take control of your financesand achieve  your </p>
         <p>financial goals with our easy-to-use finance tracking tools.</p>
-        <p>Track Your Expenses: Keep a record of your daily spending to see where</p>
-        <p>your money goes.</p></h3>
+        <p>Track Your Expenses: Keep a record of your daily spending to see</p>
+        <p> where your money goes.</p></h3>
         <button className="start-button">Start Now</button> 
       </div>
       <Footer />

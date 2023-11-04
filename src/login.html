@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PennyPincherPal</title> 
+   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css">
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        
+        .exclamation-icon {
+            color:#ff1493;
+            position: absolute;
+            right: 10px;
+            top: calc(50% - 10px);
+            display: none;
+        }
+
+        .custom-form-bg {
+            background-color: #dddddd;
+        }
+        .error-message {
+            color:#ff146e;
+            display: none;
+        }
+        
+        .custom-pink-button {
+            background-color: #ff146e; 
+            color: white; 
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body custom-form-bg">
+                        <form id="myForm">
+                           
+                            <div class="mb-3">
+                                <label for="name" class="form-label"><i class="fas fa-user"></i> Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Name">
+                                <i class="fas fa-exclamation exclamation-icon"></i>
+                                <div class="error-message" id="name-message"></div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="email" class="form-label"><i class="fas fa-envelope"></i> Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Email">
+                                <i class="fas fa-exclamation exclamation-icon"></i>
+                                <div class="error-message" id="email-message"></div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="mobile" class="form-label"><i class="fas fa-mobile-alt"></i> Mobile No</label> <!-- Changed label to "Mobile No" -->
+                                <input type="tel" class="form-control" id="mobile" placeholder="Mobile No"> <!-- Changed input type to "tel" for mobile number -->
+                                <i class="fas fa-exclamation exclamation-icon"></i>
+                                <div class="error-message" id="mobile-message"></div> <!-- Added error message div for Mobile No -->
+                            </div>
+
+                            <div class="mb-3 text-center">
+                                <button type="button" id="submit-button" class="form-control custom-pink-button">Submit</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.min.js"></script>
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script>
+       
+document.getElementById('submit-button').addEventListener('click', function() {
+   
+    validateForm();
+});
+
+function validateForm() {
+
+    const fields = ['name', 'email', 'mobile']; // Updated field names
+    fields.forEach(field => {
+        const inputField = document.getElementById(field);
+        const errorIcon = inputField.nextElementSibling;
+        const errorMessage = inputField.nextElementSibling.nextElementSibling;
+        inputField.classList.remove('is-invalid');
+        errorIcon.style.display = 'none';
+        errorMessage.textContent = ''; 
+    });
+
+   
+    const nameField = document.getElementById('name');
+    const nameErrorIcon = nameField.nextElementSibling;
+    const nameErrorMessage = nameField.nextElementSibling.nextElementSibling;
+    if (nameField.value.trim() === '') {
+        nameField.classList.add('is-invalid');
+        nameErrorIcon.style.display = 'inline-block';
+        nameErrorMessage.style.display = 'block'; 
+        nameErrorMessage.textContent = 'Name is required.';
+    }
+
+    
+    const emailField = document.getElementById('email');
+    const emailErrorIcon = emailField.nextElementSibling;
+    const emailErrorMessage = emailField.nextElementSibling.nextElementSibling;
+    if (emailField.value.trim() === '') {
+    emailField.classList.add('is-invalid'); 
+    emailErrorIcon.style.display = 'inline-block';
+    emailErrorMessage.style.display = 'block';
+    emailErrorMessage.textContent = 'Email is required.';
+}
+
+   
+    const mobileField = document.getElementById('mobile'); // Updated field name
+    const mobileErrorIcon = mobileField.nextElementSibling;
+    const mobileErrorMessage = mobileField.nextElementSibling.nextElementSibling;
+    if (mobileField.value.trim() === '') {
+        mobileField.classList.add('is-invalid');
+        mobileErrorIcon.style.display = 'inline-block';
+        mobileErrorMessage.style.display = 'block'; 
+        mobileErrorMessage.textContent = 'Mobile No is required.'; // Updated error message
+    }
+}
+
+    </script>
+</body>
+</html>

@@ -24,18 +24,20 @@
   align-items: center;
   justify-content: center;
   flex: 1;
-  padding: 20px; /* Add padding to control the space around content */
+  padding: 20px; 
 }
 
-.content h2 {
+.content h1 {
   font-size: 24px;
-  margin: 0; /* Remove negative margin */
+  margin: 0; 
+  margin-left: -420px;
 }
 
 .content h3 {
   font-size: 18px;
   text-align: left;
-  margin: 0; /* Remove negative margin */
+  margin: 0; 
+  margin-left: -200px;
 }
 
 .start-button {
